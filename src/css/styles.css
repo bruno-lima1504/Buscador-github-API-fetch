@@ -83,7 +83,7 @@ main {
     align-items: center;
 }
 
-.conainer .profile-data .info .data{
+.container .profile-data .info .data{
     padding: 40px;
     width: 40px;
     width: 50%;
@@ -120,6 +120,7 @@ main {
     justify-content: center;
   }
   
+  
   .container .profile-data .repositories ul li a{
     padding: 20px;
     border: 1px solid grey;  
@@ -127,6 +128,15 @@ main {
     display: block;
     border-radius: 7px;
     transition: 0.3s ease-in-out;
+  }
+
+  .container .profile-data .repositories .repositoriesStats li{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 7px;
+    background-color: rgb(102, 53, 134);
+     
+   
   }
   
   .container .profile-data .repositories ul li a:hover{
@@ -136,6 +146,27 @@ main {
   
   .container .profile-data.hide{
     display: none;
+  }
+
+  .container .profile-data .events h2{
+    padding: 0px;
+  }
+
+  .container .profile-data .events h2{
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .container .profile-data .events ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .container .profile-data .events ul li p{
+    padding: 10px;   
+    margin: 10px;
+    display: block; 
   }
   
   @media (max-width: 1280px) {
