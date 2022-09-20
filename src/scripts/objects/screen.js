@@ -20,7 +20,7 @@ const screen = {
                         <li>🍴 ${repo.forks_count}</li>
                         <li>🌟 ${repo.stargazers_count}</li>
                         <li>👀 ${repo.watchers_count}</li>
-                        <li>👅 ${repo.language}</li>
+                        <li>👅 ${repo.language ?? 'Não definida 😢'}</li>
                     </ul>    
                  </a>
             </li>`) 
@@ -32,12 +32,12 @@ const screen = {
                                             </div>`
         }
 
-        let eventsItens = ''
-        user.events.forEach(events  => eventsItens +=
-        `<li><p><strong>${events.repo.name}</strong> - ${events.payload.description}</p>
-        </li>`)        
+        let eventsItens = ''        
+        user.events.forEach(events  => eventsItens +=            
+        `<li><p>${events.repo.name} - ${events.payload.description ?? 'Não existe msg pra você!'}</p>
+        </li>`)   
         if(user.events.length > 0){           
-           this.userProfile.innerHTML += `<div         class="events section">
+           this.userProfile.innerHTML += `<div class="events section">
                                         <h2>Eventos</h2>
                                         <ul>${eventsItens}
                                         </ul>

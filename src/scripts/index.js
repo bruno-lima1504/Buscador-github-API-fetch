@@ -33,13 +33,23 @@ async function getUserData(userName) {
     
     const repositoriesResponse = await getRepositories(userName)
     
-    const eventsResponse = await getEvents(userName)   
+    const eventsResponse = await getEvents(userName)    
+
+    let eventsFilter = eventsResponse.filter( (type) => {
+        if(type.type ==='CreateEvent'){
+            return true
+        }else if(type.type ==='PushEvent'){
+            return true
+        }else{
+            return false
+        }   
+    })   
 
     user.setInfo(userResponse)    
     user.setRepositories(repositoriesResponse)    
-    user.setEvents(eventsResponse)   
+    user.setEvents(eventsFilter)   
     screen.renderUser(user)       
-
+    
 }
 
 function validadeEmptyInput(userName){

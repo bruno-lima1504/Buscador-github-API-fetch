@@ -120,8 +120,8 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  
+    
+  } 
   
   .container .profile-data .repositories ul li a{
     padding: 20px;
@@ -137,7 +137,7 @@ main {
     margin: 10px;
     border-radius: 7px;
     background-color: rgb(102, 53, 134);
-     
+    color:#fff; 
    
   }
   
@@ -169,6 +169,7 @@ main {
 
   .container .profile-data .events ul{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
   }
