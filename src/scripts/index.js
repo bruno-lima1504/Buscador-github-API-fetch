@@ -36,14 +36,14 @@ async function getUserData(userName) {
     const eventsResponse = await getEvents(userName)    
 
     let eventsFilter = eventsResponse.filter( (type) => {
-        if(type.type ==='CreateEvent'){
-            return true
-        }else if(type.type ==='PushEvent'){
+        if(type.type ==='CreateEvent' || type.type ==='PushEvent'){
             return true
         }else{
             return false
         }   
-    })   
+    })
+    
+    console.log(eventsFilter)
 
     user.setInfo(userResponse)    
     user.setRepositories(repositoriesResponse)    
